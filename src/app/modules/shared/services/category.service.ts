@@ -20,4 +20,36 @@ export class CategoryService {
       return this.http.get(endpoint);
       
     }
+
+    /**
+     * save the categories
+     */
+    saveCategorie(body: any) {
+      const endpoint = `$ {base_url}/categories`;
+      return this.http.post(endpoint, body);
+    }
+
+    /**
+     * Update categories
+     */
+    updateCategorie(body: any, id: any){
+      const endpoint = `$ {base_url}/categories/ ${id}`;
+      return this.http.put(endpoint, body);
+    }
+
+    /**
+     * delete categories
+     */
+    deleteCategorie(id: any){
+      const endpoint = `$ {base_url}/categories/ ${id}`;
+      return this.http.delete(endpoint);
+    }
+
+     /**
+     * get categories by id
+     */
+     getCategorieById(id: any){
+      const endpoint = `$ {base_url}/categories/ ${id}`;
+      return this.http.get(endpoint);
+    }
 }
